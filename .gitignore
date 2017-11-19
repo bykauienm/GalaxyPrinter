@@ -1,4 +1,4 @@
-# build ignore
-ConsoleApp1/bin/
-ConsoleApp1/obj/
+# build ignorre
+bin/
+obj/
 .vs
