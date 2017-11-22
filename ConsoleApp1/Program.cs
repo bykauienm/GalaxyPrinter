@@ -10,7 +10,15 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            for (int i = 0; i < 5; i++)
+            {
+                string asterisk = "";
+                for (int j = 0; j < i + 1; j++)
+                {
+                    asterisk += "*";
+                }
+                Console.WriteLine(asterisk);
+            }
         }
     }
 }
