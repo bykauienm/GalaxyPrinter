@@ -50,12 +50,13 @@ namespace ConsoleApp1
 
         public static void PrintAsteriskPyramid(int height)
         {
+            StringBuilder asterisk = new StringBuilder();
             for (int i = 0; i < height; i++)
             {
-                string asterisk = "";
+                asterisk.Clear();
                 for (int j = 0; j < i + 1; j++)
                 {
-                    asterisk += "*";
+                    asterisk.Append("*");
                 }
                 Console.WriteLine(asterisk);
             }
