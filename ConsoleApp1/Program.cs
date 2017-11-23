@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            PatternPrinter printer = new PatternPrinter();
             string readString = "";
             int resultNum = 0;
 
@@ -18,49 +19,54 @@ namespace ConsoleApp1
                 readString = "";
                 resultNum = 0;
 
-                Console.Write("How many lines? (1..100) ");
+                string question =
+                    "How select pattern type?            \n" +
+                    "1. *         2. *****      3.   *  \n" +
+                    "   **            ****          *** \n" +
+                    "   ***            ***         *****\n" +
+                    "   ****            **          *** \n" +
+                    "   *****            *           *  \n" +
+                    " Select type number (1 ~ 3) : ";
+                Console.Write(question);
                 readString = Console.ReadLine();
+                PatternType type = printer.IsValidPattern(readString);
+                if (type == (int)PatternType.None)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid pattern - select 1 ~ 3");
+                    continue;
+                }
 
+                Console.WriteLine($"[type: {type.ToString()}], Diamond only odd number");
+                Console.Write($"How many lines? (1..100) ");
+                readString = Console.ReadLine();
                 bool result = Int32.TryParse(readString, out resultNum);
                 if (result == false)
                 {
+                    Console.Clear();
                     Console.WriteLine("Invalid input - Range 1..100");
                     continue;
                 }
-
-                if (Program.IsOutOfRange(resultNum) == true)
+                if (printer.IsOutOfRange(type, resultNum) == true)
                 {
+                    Console.Clear();
                     Console.WriteLine("Invalid input - Range 1..100");
                     continue;
                 }
 
-                Program.PrintAsteriskPyramid(resultNum);
+                if (type == PatternType.Pyramid) printer.PrintAsteriskPyramid(resultNum);
+                else if (type == PatternType.Reverse) printer.PrintAsteriskPyramidReverse(resultNum);
+                else if (type == PatternType.Diamond) printer.PrintAsteriskDiamond(resultNum);
+
                 return;
             }
         }
+        
+        
+
+        
 
 
-        public static bool IsOutOfRange(int num)
-        {
-            if (num < 1 || num > 100)
-                return true;
-
-            return false;
-        }
-
-        public static void PrintAsteriskPyramid(int height)
-        {
-            StringBuilder asterisk = new StringBuilder();
-            for (int i = 0; i < height; i++)
-            {
-                asterisk.Clear();
-                for (int j = 0; j < i + 1; j++)
-                {
-                    asterisk.Append("*");
-                }
-                Console.WriteLine(asterisk);
-            }
-        }
 
     }
 }
