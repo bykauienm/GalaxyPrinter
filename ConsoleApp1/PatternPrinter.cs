@@ -36,12 +36,16 @@ namespace ConsoleApp1
         public bool IsOutOfRange(PatternType type, int num)
         {
             if (num < 1 || num > 100)
+            {
                 return true;
+            }
 
             if (type == PatternType.Diamond)
             {
                 if ((num % 2) == 0)
+                {
                     return true;
+                }
             }
 
             return false;
