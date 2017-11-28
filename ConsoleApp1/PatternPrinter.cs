@@ -14,8 +14,9 @@ namespace ConsoleApp1
         Diamond
     }
 
-    class PatternPrinter
+    internal class PatternPrinter
     {
+
         public PatternType IsValidPattern(string readString)
         {
             int retNum;
@@ -31,20 +32,21 @@ namespace ConsoleApp1
             }
             return PatternType.None;
         }
+
         public bool IsOutOfRange(PatternType type, int num)
         {
-
             if (num < 1 || num > 100)
                 return true;
 
             if (type == PatternType.Diamond)
             {
                 if ((num % 2) == 0)
-                    return true;                 
+                    return true;
             }
 
             return false;
         }
+
         public void PrintAsteriskPyramidReverse(int height)
         {
             StringBuilder asterisk = new StringBuilder();
@@ -54,9 +56,13 @@ namespace ConsoleApp1
                 for (int j = 0; j < height; j++)
                 {
                     if (i > j)
+                    {
                         asterisk.Append(" ");
+                    }
                     else
+                    {
                         asterisk.Append("*");
+                    }
                 }
                 Console.WriteLine(asterisk);
             }
@@ -90,10 +96,14 @@ namespace ConsoleApp1
                 {
                     int x = i + j;
                     int y = Math.Abs(i - j);
-                    if (x > a && x < b && y < a)
+                    if ((x > a) && (x < b) && (y < a))
+                    {
                         asterisk.Append("*");
+                    }
                     else
+                    {
                         asterisk.Append(" ");
+                    }
                 }
                 Console.WriteLine(asterisk);
             }

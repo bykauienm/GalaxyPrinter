@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
             PatternPrinter printer = new PatternPrinter();
-            string readString = "";
+            string readString = String.Empty;
             int resultNum = 0;
 
             while (true)
             {
-                readString = "";
+                readString = String.Empty;
                 resultNum = 0;
 
                 string question =
@@ -47,6 +47,7 @@ namespace ConsoleApp1
                     Console.WriteLine("Invalid input - Range 1..100");
                     continue;
                 }
+
                 if (printer.IsOutOfRange(type, resultNum) == true)
                 {
                     Console.Clear();
@@ -54,19 +55,21 @@ namespace ConsoleApp1
                     continue;
                 }
 
-                if (type == PatternType.Pyramid) printer.PrintAsteriskPyramid(resultNum);
-                else if (type == PatternType.Reverse) printer.PrintAsteriskPyramidReverse(resultNum);
-                else if (type == PatternType.Diamond) printer.PrintAsteriskDiamond(resultNum);
+                if (type == PatternType.Pyramid)
+                {
+                    printer.PrintAsteriskPyramid(resultNum);
+                }
+                else if (type == PatternType.Reverse)
+                {
+                    printer.PrintAsteriskPyramidReverse(resultNum);
+                }
+                else if (type == PatternType.Diamond)
+                {
+                    printer.PrintAsteriskDiamond(resultNum);
+                }
 
                 return;
             }
         }
-        
-        
-
-        
-
-
-
     }
 }
