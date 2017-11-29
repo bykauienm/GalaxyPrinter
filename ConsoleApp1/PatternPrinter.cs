@@ -24,10 +24,22 @@ namespace ConsoleApp1
             {
                 switch (retNum)
                 {
-                    case (int)PatternType.Pyramid: return PatternType.Pyramid;
-                    case (int)PatternType.Reverse: return PatternType.Reverse;
-                    case (int)PatternType.Diamond: return PatternType.Diamond;
-                    default: return PatternType.None;
+                    case (int)PatternType.Pyramid:
+                        {
+                            return PatternType.Pyramid;
+                        }
+                    case (int)PatternType.Reverse:
+                        {
+                            return PatternType.Reverse;
+                        }
+                    case (int)PatternType.Diamond:
+                        {
+                            return PatternType.Diamond;
+                        }
+                    default:
+                        {
+                            return PatternType.None;
+                        }
                 }
             }
             return PatternType.None;
@@ -54,12 +66,12 @@ namespace ConsoleApp1
         public void PrintAsteriskPyramidReverse(int height)
         {
             StringBuilder asterisk = new StringBuilder();
-            for (int i = 0; i < height; i++)
+            for (int row = 0; row < height; row++)
             {
                 asterisk.Clear();
-                for (int j = 0; j < height; j++)
+                for (int column = 0; column < height; column++)
                 {
-                    if (i > j)
+                    if (row > column)
                     {
                         asterisk.Append(" ");
                     }
@@ -75,10 +87,10 @@ namespace ConsoleApp1
         public void PrintAsteriskPyramid(int height)
         {
             StringBuilder asterisk = new StringBuilder();
-            for (int i = 0; i < height; i++)
+            for (int row = 0; row < height; row++)
             {
                 asterisk.Clear();
-                for (int j = 0; j < i + 1; j++)
+                for (int column = 0; column < row + 1; column++)
                 {
                     asterisk.Append("*");
                 }
@@ -88,19 +100,19 @@ namespace ConsoleApp1
 
         public void PrintAsteriskDiamond(int height)
         {
-            int a = (height + 1) / 2;
-            int b = a * 3;
-            int c = a;
+            int conditionA = (height + 1) / 2;
+            int conditionB = conditionA * 3;
 
             StringBuilder asterisk = new StringBuilder();
-            for (int i = 1; i <= height; i++)
+            for (int row = 1; row <= height; row++)
             {
                 asterisk.Clear();
-                for (int j = 1; j <= height; j++)
+                for (int column = 1; column <= height; column++)
                 {
-                    int x = i + j;
-                    int y = Math.Abs(i - j);
-                    if ((x > a) && (x < b) && (y < a))
+                    int indexSum = row + column;
+                    int indexDiff = Math.Abs(row - column);
+
+                    if ((indexSum > conditionA) && (indexSum < conditionB) && (indexDiff < conditionA))
                     {
                         asterisk.Append("*");
                     }
