@@ -21,19 +21,19 @@ namespace ConsoleApp1
 
                 string question =
                     "How select pattern type?            \n" +
-                    "1. *         2. *****      3.   *  \n" +
-                    "   **            ****          *** \n" +
-                    "   ***            ***         *****\n" +
-                    "   ****            **          *** \n" +
-                    "   *****            *           *  \n" +
-                    " Select type number (1 ~ 3) : ";
+                    "1. *     2. *****   3.   *     4.    *****  5.    *****\n" +
+                    "   **        ****       ***         *****        ****  \n" +
+                    "   ***        ***      *****       *****        ***    \n" +
+                    "   ****        **       ***       *****        **      \n" +
+                    "   *****        *        *       *****        *        \n" +
+                    " Select type number (1 ~ 5) ";
                 Console.Write(question);
                 readString = Console.ReadLine();
                 PatternType type = printer.IsValidPattern(readString);
-                if (type == (int)PatternType.None)
+                if (type == PatternType.None)
                 {
                     Console.Clear();
-                    Console.WriteLine("Invalid pattern - select 1 ~ 3");
+                    Console.WriteLine("Invalid pattern - select 1 ~ 5");
                     continue;
                 }
 
@@ -55,20 +55,16 @@ namespace ConsoleApp1
                     continue;
                 }
 
-                if (type == PatternType.Pyramid)
+                printer.PrintPattern(type, resultNum);
+
+                Console.Write("press <Q> to exit, else continue... ");
+                if (Console.ReadKey().Key == ConsoleKey.Q)
                 {
-                    printer.PrintAsteriskPyramid(resultNum);
-                }
-                else if (type == PatternType.Reverse)
-                {
-                    printer.PrintAsteriskPyramidReverse(resultNum);
-                }
-                else if (type == PatternType.Diamond)
-                {
-                    printer.PrintAsteriskDiamond(resultNum);
+                    Console.Clear();
+                    return;
                 }
 
-                return;
+                Console.Clear();
             }
         }
     }

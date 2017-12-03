@@ -11,11 +11,37 @@ namespace ConsoleApp1
         None,
         Pyramid,
         Reverse,
-        Diamond
+        Diamond,
+        Diagnal,
+        Horn
     }
 
     internal class PatternPrinter
     {
+
+        public void PrintPattern(PatternType type, int resultNum)
+        {
+            if (type == PatternType.Pyramid)
+            {
+                PrintAsteriskPyramid(resultNum);
+            }
+            else if (type == PatternType.Reverse)
+            {
+                PrintAsteriskPyramidReverse(resultNum);
+            }
+            else if (type == PatternType.Diamond)
+            {
+                PrintAsteriskDiamond(resultNum);
+            }
+            else if (type == PatternType.Diagnal)
+            {
+                PrintAsteriskDiagnal(resultNum);
+            }
+            else if (type == PatternType.Horn)
+            {
+                PrintAsteriskHorn(resultNum);
+            }
+        }
 
         public PatternType IsValidPattern(string readString)
         {
@@ -35,6 +61,14 @@ namespace ConsoleApp1
                     case (int)PatternType.Diamond:
                         {
                             return PatternType.Diamond;
+                        }
+                    case (int)PatternType.Diagnal:
+                        {
+                            return PatternType.Diagnal;
+                        }
+                    case (int)PatternType.Horn:
+                        {
+                            return PatternType.Horn;
                         }
                     default:
                         {
@@ -113,6 +147,48 @@ namespace ConsoleApp1
                     int indexDiff = Math.Abs(row - column);
 
                     if ((indexSum > conditionA) && (indexSum < conditionB) && (indexDiff < conditionA))
+                    {
+                        asterisk.Append("*");
+                    }
+                    else
+                    {
+                        asterisk.Append(" ");
+                    }
+                }
+                Console.WriteLine(asterisk);
+            }
+        }
+
+        public void PrintAsteriskDiagnal(int height)
+        {
+            StringBuilder asterisk = new StringBuilder();
+            for (int row = 0; row < height; row++)
+            {
+                asterisk.Clear();
+                for (int column = 1; column <= (height * 2) - 1; column++)
+                {
+                    if (column >= (height - row) && column <= (height * 2) - 1 - row)
+                    {
+                        asterisk.Append("*");
+                    }
+                    else
+                    {
+                        asterisk.Append(" ");
+                    }
+                }
+                Console.WriteLine(asterisk);
+            }
+        }
+
+        public void PrintAsteriskHorn(int height)
+        {
+            StringBuilder asterisk = new StringBuilder();
+            for (int row = 0; row < height; row++)
+            {
+                asterisk.Clear();
+                for (int column = 1; column <= (height * 2) - 1; column++)
+                {
+                    if (column >= (height - row) && column <= (height * 2) - 1 - (row * 2))
                     {
                         asterisk.Append("*");
                     }
