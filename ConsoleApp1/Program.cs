@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -19,51 +19,36 @@ namespace ConsoleApp1
                 readString = String.Empty;
                 resultNum = 0;
 
-                string question =
-                    "How select pattern type?            \n" +
-                    "1. *     2. *****   3.   *     4.    *****  5.    *****\n" +
-                    "   **        ****       ***         *****        ****  \n" +
-                    "   ***        ***      *****       *****        ***    \n" +
-                    "   ****        **       ***       *****        **      \n" +
-                    "   *****        *        *       *****        *        \n" +
-                    " Select type number (1 ~ 5) ";
-                Console.Write(question);
+                printer.RequestInputTypeMessage();
                 readString = Console.ReadLine();
-                PatternType type = printer.IsValidPattern(readString);
-                if (type == PatternType.None)
+                var pattern = printer.FindPattern(readString);
+                if (pattern == null)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Invalid pattern - select 1 ~ 5");
+                    printer.InvaildPatternTypeMessage();
                     continue;
                 }
 
-                Console.WriteLine($"[type: {type.ToString()}], Diamond only odd number");
-                Console.Write($"How many lines? (1..100) ");
+                pattern.RequestInputMessage();
                 readString = Console.ReadLine();
-                bool result = Int32.TryParse(readString, out resultNum);
-                if (result == false)
+                if (Int32.TryParse(readString, out resultNum) == false)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Invalid input - Range 1..100");
+                    pattern.InvalidInputRangeMessage();
                     continue;
                 }
 
-                if (printer.IsOutOfRange(type, resultNum) == true)
+                if (pattern.IsOutOfRange(resultNum))
                 {
-                    Console.Clear();
-                    Console.WriteLine("Invalid input - Range 1..100");
+                    pattern.InvalidInputRangeMessage();
                     continue;
                 }
-
-                printer.PrintPattern(type, resultNum);
+                
+                pattern.Print(resultNum);
 
                 Console.Write("press <Q> to exit, else continue... ");
                 if (Console.ReadKey().Key == ConsoleKey.Q)
                 {
-                    Console.Clear();
                     return;
                 }
-
                 Console.Clear();
             }
         }

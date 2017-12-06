@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsteriskPatterns\PatternBase.cs" />
+    <Compile Include="AsteriskPatterns\PatternDiagnal.cs" />
+    <Compile Include="AsteriskPatterns\PatternDiamond.cs" />
+    <Compile Include="AsteriskPatterns\PatternHorn.cs" />
+    <Compile Include="AsteriskPatterns\PatternPyramid.cs" />
+    <Compile Include="AsteriskPatterns\PatternReverse.cs" />
     <Compile Include="PatternPrinter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
