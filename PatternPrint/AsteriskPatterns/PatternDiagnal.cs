@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.AsteriskPatterns
+namespace PatternPrint.AsteriskPatterns
 {
-    public class PatternReverse : PatternBase
+    public class PatternDiagnal : PatternBase
     {
         public override void Print(int height)
         {
@@ -14,15 +14,15 @@ namespace ConsoleApp1.AsteriskPatterns
             for (int row = 0; row < height; row++)
             {
                 asterisk.Clear();
-                for (int column = 0; column < height; column++)
+                for (int column = 1; column <= (height * 2) - 1; column++)
                 {
-                    if (row > column)
+                    if (column >= (height - row) && column <= (height * 2) - 1 - row)
                     {
-                        asterisk.Append(" ");
+                        asterisk.Append("*");
                     }
                     else
                     {
-                        asterisk.Append("*");
+                        asterisk.Append(" ");
                     }
                 }
                 Console.WriteLine(asterisk);
