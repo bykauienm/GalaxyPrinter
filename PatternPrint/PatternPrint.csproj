@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC5D252D-4D41-40B7-80B0-CCADF72E181F}</ProjectGuid>
+    <ProjectGuid>{1A67F925-192A-4147-BEDC-D6CB7E675E22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PatternPrint</RootNamespace>
@@ -44,9 +44,9 @@
     <Compile Include="AsteriskPatterns\PatternDiagnal.cs" />
     <Compile Include="AsteriskPatterns\PatternDiamond.cs" />
     <Compile Include="AsteriskPatterns\PatternHorn.cs" />
-    <Compile Include="PatternPrinter.cs" />
     <Compile Include="AsteriskPatterns\PatternPyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternReverse.cs" />
+    <Compile Include="PatternPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
