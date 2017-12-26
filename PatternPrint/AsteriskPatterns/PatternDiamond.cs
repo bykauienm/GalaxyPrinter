@@ -8,7 +8,7 @@ namespace PatternPrint.AsteriskPatterns
 {
     public class PatternDiamond : PatternBase
     {
-        public override void Print(int height)
+        public override string Print(int height)
         {
             int conditionA = (height + 1) / 2;
             int conditionB = conditionA * 3;
@@ -16,7 +16,6 @@ namespace PatternPrint.AsteriskPatterns
             StringBuilder asterisk = new StringBuilder();
             for (int row = 1; row <= height; row++)
             {
-                asterisk.Clear();
                 for (int column = 1; column <= height; column++)
                 {
                     int indexSum = row + column;
@@ -31,8 +30,10 @@ namespace PatternPrint.AsteriskPatterns
                         asterisk.Append(" ");
                     }
                 }
-                Console.WriteLine(asterisk);
+                asterisk.Append("\n");
             }
+            Console.WriteLine(asterisk);
+            return asterisk.ToString();
         }
 
         public override bool IsOutOfRange(int number)

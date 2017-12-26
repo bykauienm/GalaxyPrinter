@@ -8,12 +8,11 @@ namespace PatternPrint.AsteriskPatterns
 {
     public class PatternDiagnal : PatternBase
     {
-        public override void Print(int height)
+        public override string Print(int height)
         {
             StringBuilder asterisk = new StringBuilder();
             for (int row = 0; row < height; row++)
             {
-                asterisk.Clear();
                 for (int column = 1; column <= (height * 2) - 1; column++)
                 {
                     if (column >= (height - row) && column <= (height * 2) - 1 - row)
@@ -25,8 +24,10 @@ namespace PatternPrint.AsteriskPatterns
                         asterisk.Append(" ");
                     }
                 }
-                Console.WriteLine(asterisk);
+                asterisk.Append("\n");
             }
+            Console.WriteLine(asterisk);
+            return asterisk.ToString();
         }
     }
 }

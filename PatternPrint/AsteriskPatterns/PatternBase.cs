@@ -8,7 +8,7 @@ namespace PatternPrint.AsteriskPatterns
 {
     public abstract class PatternBase
     {
-        public abstract void Print(int height);
+        public abstract string Print(int height);
         public virtual bool IsOutOfRange(int number)
         {
             if ((number < 1) || (number > 100))

@@ -8,18 +8,26 @@ namespace PatternPrint.AsteriskPatterns
 {
     public class PatternPyramid : PatternBase
     {
-        public override void Print(int height)
+        public override string Print(int height)
         {
             StringBuilder asterisk = new StringBuilder();
             for (int row = 0; row < height; row++)
             {
-                asterisk.Clear();
-                for (int column = 0; column < row + 1; column++)
+                for (int column = 0; column < height; column++)
                 {
-                    asterisk.Append("*");
+                    if (row >= column)
+                    {
+                        asterisk.Append("*");
+                    }
+                    else
+                    {
+                        asterisk.Append(" ");
+                    }
                 }
-                Console.WriteLine(asterisk);
+                asterisk.Append("\n");
             }
+            Console.WriteLine(asterisk);
+            return asterisk.ToString();
         }
     }
 }
