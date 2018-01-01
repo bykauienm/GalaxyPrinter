@@ -9,7 +9,7 @@ namespace UnitTestProject
     public class PrintPatternTest
     {
         [TestMethod]
-        public void IsOutOfRangeTestPattern1()
+        public void IsOutOfRangeTestPatternPyramid()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("1");
@@ -20,7 +20,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void IsOutOfRangeTestPattern2()
+        public void IsOutOfRangeTestPatternReverse()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("2");
@@ -31,7 +31,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void IsOutOfRangeTestPattern3()
+        public void IsOutOfRangeTestPatternDiamond()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("3");
@@ -43,7 +43,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void IsOutOfRangeTestPattern4()
+        public void IsOutOfRangeTestPatternDiagnal()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("4");
@@ -54,7 +54,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void IsOutOfRangeTestPattern5()
+        public void IsOutOfRangeTestPatternHorn()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("5");
@@ -65,7 +65,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void FindPatternTest1()
+        public void FindPatternTestPyramid()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("1");
@@ -74,7 +74,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void FindPatternTest2()
+        public void FindPatternTestReverse()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("2");
@@ -83,7 +83,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void FindPatternTest3()
+        public void FindPatternTestDiamond()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("3");
@@ -92,7 +92,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void FindPatternTest4()
+        public void FindPatternTestDiagnal()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("4");
@@ -101,7 +101,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void FindPatternTest5()
+        public void FindPatternTestHorn()
         {
             var printer = new PatternPrinter();
             var pattern = printer.FindPattern("5");
@@ -110,7 +110,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void PrintTest1()
+        public void PrintTestPyramid()
         {
             var pattern = new PatternPyramid();
             var result = "*    \n**   \n***  \n**** \n*****\n";
@@ -119,7 +119,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void PrintTest2()
+        public void PrintTestReverse()
         {
             var pattern = new PatternReverse();
             var result = "*****\n ****\n  ***\n   **\n    *\n";
@@ -128,7 +128,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void PrintTest3()
+        public void PrintTestDiamond()
         {
             var pattern = new PatternDiamond();
             var result = "  *  \n *** \n*****\n *** \n  *  \n";
@@ -137,7 +137,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void PrintTest4()
+        public void PrintTestDiagnal()
         {
             var pattern = new PatternDiagnal();
             var result = "    *****\n   ***** \n  *****  \n *****   \n*****    \n";
@@ -146,7 +146,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void PrintTest5()
+        public void PrintTestHorn()
         {
             var pattern = new PatternHorn();
             var result = "    *****\n   ****  \n  ***    \n **      \n*        \n";
