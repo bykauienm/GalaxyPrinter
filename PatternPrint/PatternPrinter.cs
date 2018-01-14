@@ -45,8 +45,8 @@ namespace PatternPrint
                     "   ***        ***      *****       *****        ***    \n" +
                     "   ****        **       ***       *****        **      \n" +
                     "   *****        *        *       *****        *        \n" +
-                    " Select type number (1 ~ 5) ";
-            Console.Write(question);
+                    "Select type number (1 ~ 5) ";
+            Console.WriteLine(question);
         }
     }
 }

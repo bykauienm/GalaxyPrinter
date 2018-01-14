@@ -48,8 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PatternPrinterTest.cs" />
     <Compile Include="PrintPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequenceManagementTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

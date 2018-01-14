@@ -11,6 +11,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            SequenceManagement sequence = new SequenceManagement();
             PatternPrinter printer = new PatternPrinter();
             string readString = String.Empty;
             int resultNum = 0;
@@ -21,7 +22,14 @@ namespace ConsoleApp1
                 resultNum = 0;
 
                 printer.RequestInputTypeMessage();
+                sequence.RequestTerminationCodeMessage(TerminationCodeType.Emergency);
                 readString = Console.ReadLine();
+                if (sequence.CheckTerminationCode(readString, TerminationCodeType.Emergency))
+                {
+                    sequence.PrintTerminationMessage();
+                    return;
+                }                             
+                    
                 var pattern = printer.FindPattern(readString);
                 if (pattern == null)
                 {
@@ -30,7 +38,14 @@ namespace ConsoleApp1
                 }
 
                 pattern.RequestInputMessage();
+                sequence.RequestTerminationCodeMessage(TerminationCodeType.Emergency);
                 readString = Console.ReadLine();
+                if (sequence.CheckTerminationCode(readString, TerminationCodeType.Emergency))
+                {
+                    sequence.PrintTerminationMessage();
+                    return;
+                }
+
                 if (Int32.TryParse(readString, out resultNum) == false)
                 {
                     pattern.InvalidInputRangeMessage();
@@ -45,11 +60,14 @@ namespace ConsoleApp1
                 
                 pattern.Print(resultNum);
 
-                Console.Write("press <Q> to exit, else continue... ");
-                if (Console.ReadKey().Key == ConsoleKey.Q)
+                sequence.RequestTerminationCodeMessage(TerminationCodeType.Normal | TerminationCodeType.Emergency);
+                readString = Console.ReadLine();
+                if (sequence.CheckTerminationCode(readString, TerminationCodeType.Normal | TerminationCodeType.Emergency))
                 {
+                    sequence.PrintTerminationMessage();
                     return;
                 }
+
                 Console.Clear();
             }
         }

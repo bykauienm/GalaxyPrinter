@@ -50,12 +50,12 @@ namespace PatternPrint.AsteriskPatterns
         public override void RequestInputMessage()
         {
             Console.Clear();
-            Console.Write("How many lines? (1..100), only odd number  ");
+            Console.WriteLine("How many lines? (1..100), only odd number  ");
         }
         public override void InvalidInputRangeMessage()
         {
             Console.Clear();
-            Console.Write("Invalid input - Range 1..100, only odd number");
+            Console.WriteLine("Invalid input - Range 1..100, only odd number");
         }
     }
 }

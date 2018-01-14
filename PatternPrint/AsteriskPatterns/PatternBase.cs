@@ -19,12 +19,12 @@ namespace PatternPrint.AsteriskPatterns
         public virtual void RequestInputMessage()
         {
             Console.Clear();
-            Console.Write($"How many lines? (1..100)  ");
+            Console.WriteLine($"How many lines? (1..100)  ");
         }
         public virtual void InvalidInputRangeMessage()
         {
             Console.Clear();
-            Console.Write("Invalid input - Range 1..100");
+            Console.WriteLine("Invalid input - Range 1..100");
         }
     }
 }
