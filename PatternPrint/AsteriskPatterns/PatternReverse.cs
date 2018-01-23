@@ -23,7 +23,6 @@ namespace PatternPrint.AsteriskPatterns
                     {
                         asterisk.Append("*");
                     }
-
                 }
                 asterisk.Append("\n");
             }

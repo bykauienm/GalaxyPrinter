@@ -22,9 +22,9 @@ namespace ConsoleApp1
                 resultNum = 0;
 
                 printer.RequestInputTypeMessage();
-                sequence.RequestTerminationCodeMessage(TerminationCodeType.Emergency);
+                sequence.RequestTerminationCodeMessage();
                 readString = Console.ReadLine();
-                if (sequence.CheckTerminationCode(readString, TerminationCodeType.Emergency))
+                if (sequence.CheckTerminationCode(readString))
                 {
                     sequence.PrintTerminationMessage();
                     return;
@@ -38,9 +38,9 @@ namespace ConsoleApp1
                 }
 
                 pattern.RequestInputMessage();
-                sequence.RequestTerminationCodeMessage(TerminationCodeType.Emergency);
+                sequence.RequestTerminationCodeMessage();
                 readString = Console.ReadLine();
-                if (sequence.CheckTerminationCode(readString, TerminationCodeType.Emergency))
+                if (sequence.CheckTerminationCode(readString))
                 {
                     sequence.PrintTerminationMessage();
                     return;
@@ -57,12 +57,13 @@ namespace ConsoleApp1
                     pattern.InvalidInputRangeMessage();
                     continue;
                 }
-                
+
+                Console.Clear();
                 pattern.Print(resultNum);
 
-                sequence.RequestTerminationCodeMessage(TerminationCodeType.Normal | TerminationCodeType.Emergency);
+                sequence.RequestTerminationCodeMessage();
                 readString = Console.ReadLine();
-                if (sequence.CheckTerminationCode(readString, TerminationCodeType.Normal | TerminationCodeType.Emergency))
+                if (sequence.CheckTerminationCode(readString))
                 {
                     sequence.PrintTerminationMessage();
                     return;

@@ -49,13 +49,13 @@ namespace PatternPrint.AsteriskPatterns
 
         public override void RequestInputMessage()
         {
-            Console.Clear();
-            Console.WriteLine("How many lines? (1..100), only odd number  ");
+            base.RequestInputMessage();
+            Console.WriteLine("and Only Odd number");
         }
         public override void InvalidInputRangeMessage()
         {
-            Console.Clear();
-            Console.WriteLine("Invalid input - Range 1..100, only odd number");
+            base.InvalidInputRangeMessage();
+            Console.WriteLine("and Only Odd number");
         }
     }
 }

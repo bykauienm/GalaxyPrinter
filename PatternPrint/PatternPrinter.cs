@@ -39,13 +39,13 @@ namespace PatternPrint
         public void RequestInputTypeMessage()
         {
             string question =
-                    "How select pattern type?            \n" +
-                    "1. *     2. *****   3.   *     4.    *****  5.    *****\n" +
-                    "   **        ****       ***         *****        ****  \n" +
-                    "   ***        ***      *****       *****        ***    \n" +
-                    "   ****        **       ***       *****        **      \n" +
-                    "   *****        *        *       *****        *        \n" +
-                    "Select type number (1 ~ 5) ";
+                    $"How select pattern type? \n" +
+                    $"1. *     2. *****   3.   *     4.    *****  5.    *****\n" +
+                    $"   **        ****       ***         *****        ****  \n" +
+                    $"   ***        ***      *****       *****        ***    \n" +
+                    $"   ****        **       ***       *****        **      \n" +
+                    $"   *****        *        *       *****        *        \n" +
+                    $"Select type number (1 ~ {PatternDictionary.Count}) ";
             Console.WriteLine(question);
         }
     }

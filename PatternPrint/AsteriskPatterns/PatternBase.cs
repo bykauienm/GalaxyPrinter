@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace PatternPrint.AsteriskPatterns
 {
+    public enum Range
+    {
+        Min = 1,
+        Max = 100
+    }
+
     public abstract class PatternBase
     {
         public abstract string Print(int height);
         public virtual bool IsOutOfRange(int number)
         {
-            if ((number < 1) || (number > 100))
+            if ((number < (int)Range.Min) || (number > (int)Range.Max))
                 return true;
             else
                 return false;
@@ -19,12 +25,12 @@ namespace PatternPrint.AsteriskPatterns
         public virtual void RequestInputMessage()
         {
             Console.Clear();
-            Console.WriteLine($"How many lines? (1..100)  ");
+            Console.WriteLine($"How many lines? ({(int)Range.Min}..{(int)Range.Max})  ");
         }
         public virtual void InvalidInputRangeMessage()
         {
             Console.Clear();
-            Console.WriteLine("Invalid input - Range 1..100");
+            Console.WriteLine($"Invalid input - Range {(int)Range.Min}..{(int)Range.Max}");
         }
     }
 }
