@@ -44,6 +44,7 @@
     <Compile Include="AsteriskPatterns\PatternDiagnal.cs" />
     <Compile Include="AsteriskPatterns\PatternDiamond.cs" />
     <Compile Include="AsteriskPatterns\PatternHorn.cs" />
+    <Compile Include="AsteriskPatterns\PatternIncreasePyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternPyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternReverse.cs" />
     <Compile Include="PatternPrinter.cs" />

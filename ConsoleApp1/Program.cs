@@ -59,7 +59,8 @@ namespace ConsoleApp1
                 }
 
                 Console.Clear();
-                pattern.Print(resultNum);
+                var asterisk = pattern.Print(resultNum);
+                Console.WriteLine(asterisk);
 
                 sequence.RequestTerminationCodeMessage();
                 readString = Console.ReadLine();

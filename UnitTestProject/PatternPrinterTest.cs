@@ -57,5 +57,14 @@ namespace UnitTestProject
             Assert.AreEqual(new PatternHorn().GetType(), pattern.GetType());
         }
 
+        [TestMethod]
+        public void FindPatternTestIncreasePyramid()
+        {
+            var printer = new PatternPrinter();
+            var pattern = printer.FindPattern("6");
+
+            Assert.AreEqual(new PatternIncreasePyramid().GetType(), pattern.GetType());
+        }
+
     }
 }

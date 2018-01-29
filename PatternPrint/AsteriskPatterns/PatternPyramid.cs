@@ -26,7 +26,7 @@ namespace PatternPrint.AsteriskPatterns
                 }
                 asterisk.Append("\n");
             }
-            Console.WriteLine(asterisk);
+            //Console.WriteLine(asterisk);
             return asterisk.ToString();
         }
     }

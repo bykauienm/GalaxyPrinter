@@ -32,7 +32,7 @@ namespace PatternPrint.AsteriskPatterns
                 }
                 asterisk.Append("\n");
             }
-            Console.WriteLine(asterisk);
+
             return asterisk.ToString();
         }
 

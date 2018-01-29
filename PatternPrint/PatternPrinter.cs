@@ -20,6 +20,7 @@ namespace PatternPrint
             PatternDictionary.Add("3", new PatternDiamond());
             PatternDictionary.Add("4", new PatternDiagnal());
             PatternDictionary.Add("5", new PatternHorn());
+            PatternDictionary.Add("6", new PatternIncreasePyramid());
         }
 
         public PatternBase FindPattern(string select)
@@ -40,11 +41,14 @@ namespace PatternPrint
         {
             string question =
                     $"How select pattern type? \n" +
-                    $"1. *     2. *****   3.   *     4.    *****  5.    *****\n" +
-                    $"   **        ****       ***         *****        ****  \n" +
-                    $"   ***        ***      *****       *****        ***    \n" +
-                    $"   ****        **       ***       *****        **      \n" +
-                    $"   *****        *        *       *****        *        \n" +
+                    $"1. *     2. *****   3.   *     4.    *****  5.    *****  6. *  \n" +
+                    $"   **        ****       ***         *****        ****          \n" +
+                    $"   ***        ***      *****       *****        ***         *  \n" +
+                    $"   ****        **       ***       *****        **           ** \n" +
+                    $"   *****        *        *       *****        *                \n" +
+                    $"                                                            *  \n" +
+                    $"                                                            ** \n" +
+                    $"                                                            ***\n" +
                     $"Select type number (1 ~ {PatternDictionary.Count}) ";
             Console.WriteLine(question);
         }

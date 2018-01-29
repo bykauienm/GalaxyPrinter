@@ -60,6 +60,16 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        public void IsOutOfRangeTestPatternIncreasePyramid()
+        {
+            var pattern = new PatternIncreasePyramid();
+
+            Assert.IsTrue(pattern.IsOutOfRange(0));
+            Assert.IsTrue(pattern.IsOutOfRange(101));
+            Assert.IsFalse(pattern.IsOutOfRange(5));
+        }
+
+        [TestMethod]
         public void PrintTestPyramid()
         {
             var pattern = new PatternPyramid();
@@ -102,6 +112,15 @@ namespace UnitTestProject
             var result = "    *****\n   ****  \n  ***    \n **      \n*        \n";
 
             Assert.AreEqual(result, pattern.Print(5));
+        }
+
+        [TestMethod]
+        public void PrintTestIncreasePyramid()
+        {
+            var pattern = new PatternIncreasePyramid();
+            var result = "*\n\n* \n**\n\n*  \n** \n***\n\n";
+
+            Assert.AreEqual(result, pattern.Print(3));
         }
 
     }
