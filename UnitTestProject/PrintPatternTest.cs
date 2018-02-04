@@ -8,65 +8,71 @@ namespace UnitTestProject
     [TestClass]
     public class PrintPatternTest
     {
-        [TestMethod]
-        public void IsOutOfRangeTestPatternPyramid()
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternPyramid(int number, bool isValid)
         {
             var pattern = new PatternPyramid();
-
-            Assert.IsTrue(pattern.IsOutOfRange(0));
-            Assert.IsTrue(pattern.IsOutOfRange(101));
-            Assert.IsFalse(pattern.IsOutOfRange(5));
+            
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
-        [TestMethod]
-        public void IsOutOfRangeTestPatternReverse()
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternReverse(int number, bool isValid)
         {
             var pattern = new PatternReverse();
 
-            Assert.IsTrue(pattern.IsOutOfRange(0));
-            Assert.IsTrue(pattern.IsOutOfRange(101));
-            Assert.IsFalse(pattern.IsOutOfRange(5));
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
-        [TestMethod]
-        public void IsOutOfRangeTestPatternDiamond()
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(4, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternDiamond(int number, bool isValid)
         {
             var pattern = new PatternDiamond();
 
-            Assert.IsTrue(pattern.IsOutOfRange(0));
-            Assert.IsTrue(pattern.IsOutOfRange(101));
-            Assert.IsTrue(pattern.IsOutOfRange(4));
-            Assert.IsFalse(pattern.IsOutOfRange(5));
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
-        [TestMethod]
-        public void IsOutOfRangeTestPatternDiagnal()
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternDiagnal(int number, bool isValid)
         {
             var pattern = new PatternDiagnal();
 
-            Assert.IsTrue(pattern.IsOutOfRange(0));
-            Assert.IsTrue(pattern.IsOutOfRange(101));
-            Assert.IsFalse(pattern.IsOutOfRange(5));
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
-        [TestMethod]
-        public void IsOutOfRangeTestPatternHorn()
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternHorn(int number, bool isValid)
         {
             var pattern = new PatternHorn();
 
-            Assert.IsTrue(pattern.IsOutOfRange(0));
-            Assert.IsTrue(pattern.IsOutOfRange(101));
-            Assert.IsFalse(pattern.IsOutOfRange(5));
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
-        [TestMethod]
-        public void IsOutOfRangeTestPatternIncreasePyramid()
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternIncreasePyramid(int number, bool isValid)
         {
             var pattern = new PatternIncreasePyramid();
 
-            Assert.IsTrue(pattern.IsOutOfRange(0));
-            Assert.IsTrue(pattern.IsOutOfRange(101));
-            Assert.IsFalse(pattern.IsOutOfRange(5));
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
         [TestMethod]
