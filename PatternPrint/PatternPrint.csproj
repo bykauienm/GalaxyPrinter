@@ -47,6 +47,7 @@
     <Compile Include="AsteriskPatterns\PatternIncreasePyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternPyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternReverse.cs" />
+    <Compile Include="AsteriskPatterns\PatternRightUpPyramid.cs" />
     <Compile Include="PatternPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

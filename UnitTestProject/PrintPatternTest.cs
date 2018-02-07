@@ -75,6 +75,17 @@ namespace UnitTestProject
             Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternRightUpPyramid(int number, bool isValid)
+        {
+            var pattern = new PatternRightUpPyramid();
+
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
+        }
+
         [TestMethod]
         public void PrintTestPyramid()
         {
@@ -125,6 +136,15 @@ namespace UnitTestProject
         {
             var pattern = new PatternIncreasePyramid();
             var result = "*\n\n* \n**\n\n*  \n** \n***\n\n";
+
+            Assert.AreEqual(result, pattern.Print(3));
+        }
+
+        [TestMethod]
+        public void PrintTestRightUpPyramid()
+        {
+            var pattern = new PatternRightUpPyramid();
+            var result = "*     *      *       \n      **     **      \n             ***     \n";
 
             Assert.AreEqual(result, pattern.Print(3));
         }

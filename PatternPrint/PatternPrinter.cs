@@ -21,6 +21,7 @@ namespace PatternPrint
             PatternDictionary.Add("4", new PatternDiagnal());
             PatternDictionary.Add("5", new PatternHorn());
             PatternDictionary.Add("6", new PatternIncreasePyramid());
+            PatternDictionary.Add("7", new PatternRightUpPyramid());
         }
 
         public PatternBase FindPattern(string select)
@@ -48,7 +49,9 @@ namespace PatternPrint
                     $"   *****        *        *       *****        *                \n" +
                     $"                                                            *  \n" +
                     $"                                                            ** \n" +
-                    $"                                                            ***\n" +
+                    $"7. *     *      *                                           ***\n" +
+                    $"         **     **                                             \n" +
+                    $"                ***                                            \n" +
                     $"Select type number (1 ~ {PatternDictionary.Count}) ";
             Console.WriteLine(question);
         }
