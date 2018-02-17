@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PatternPrint;
 using PatternPrint.AsteriskPatterns;
+using System.Collections.Generic;
 
 namespace UnitTestProject
 {
@@ -15,7 +16,7 @@ namespace UnitTestProject
         public void IsOutOfRangeTestPatternPyramid(int number, bool isValid)
         {
             var pattern = new PatternPyramid();
-            
+
             Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
@@ -86,6 +87,17 @@ namespace UnitTestProject
             Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
 
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(5, false)]
+        [DataRow(101, true)]
+        public void IsOutOfRangeTestPatternRandomPyramid(int number, bool isValid)
+        {
+            var pattern = new PatternRandomPyramid();
+
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
+        }
+
         [TestMethod]
         public void PrintTestPyramid()
         {
@@ -149,5 +161,30 @@ namespace UnitTestProject
             Assert.AreEqual(result, pattern.Print(3));
         }
 
+        [TestMethod]
+        public void PrintTestRandomPyramid()
+        {
+            var pattern = new PatternRandomPyramid();
+            var patternSeg = new PatternPyramid();
+            var compareList = new List<string>();
+            compareList.Add(patternSeg.Print(1) + "\n" + patternSeg.Print(2) + "\n" + patternSeg.Print(3) + "\n");
+            compareList.Add(patternSeg.Print(1) + "\n" + patternSeg.Print(3) + "\n" + patternSeg.Print(2) + "\n");
+            compareList.Add(patternSeg.Print(2) + "\n" + patternSeg.Print(1) + "\n" + patternSeg.Print(3) + "\n");
+            compareList.Add(patternSeg.Print(2) + "\n" + patternSeg.Print(3) + "\n" + patternSeg.Print(1) + "\n");
+            compareList.Add(patternSeg.Print(3) + "\n" + patternSeg.Print(1) + "\n" + patternSeg.Print(2) + "\n");
+            compareList.Add(patternSeg.Print(3) + "\n" + patternSeg.Print(2) + "\n" + patternSeg.Print(1) + "\n");
+
+            bool isContain = true;
+            for (int count = 0; count < 1000000; count++)
+            {
+                var asterisk = pattern.Print(3);
+                if (compareList.Contains(asterisk) == false)
+                {
+                    isContain = false;
+                } 
+            }
+
+            Assert.IsTrue(isContain);
+        }
     }
 }
