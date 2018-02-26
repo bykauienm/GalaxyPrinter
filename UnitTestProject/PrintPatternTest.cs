@@ -166,25 +166,11 @@ namespace UnitTestProject
         {
             var pattern = new PatternRandomPyramid();
             var patternSeg = new PatternPyramid();
-            var compareList = new List<string>();
-            compareList.Add(patternSeg.Print(1) + "\n" + patternSeg.Print(2) + "\n" + patternSeg.Print(3) + "\n");
-            compareList.Add(patternSeg.Print(1) + "\n" + patternSeg.Print(3) + "\n" + patternSeg.Print(2) + "\n");
-            compareList.Add(patternSeg.Print(2) + "\n" + patternSeg.Print(1) + "\n" + patternSeg.Print(3) + "\n");
-            compareList.Add(patternSeg.Print(2) + "\n" + patternSeg.Print(3) + "\n" + patternSeg.Print(1) + "\n");
-            compareList.Add(patternSeg.Print(3) + "\n" + patternSeg.Print(1) + "\n" + patternSeg.Print(2) + "\n");
-            compareList.Add(patternSeg.Print(3) + "\n" + patternSeg.Print(2) + "\n" + patternSeg.Print(1) + "\n");
-
-            bool isContain = true;
-            for (int count = 0; count < 1000000; count++)
-            {
-                var asterisk = pattern.Print(3);
-                if (compareList.Contains(asterisk) == false)
-                {
-                    isContain = false;
-                } 
-            }
-
-            Assert.IsTrue(isContain);
+            string result = patternSeg.Print(1) + "\n" + patternSeg.Print(2) + "\n" + patternSeg.Print(3) + "\n";
+            
+            var list = pattern.GenerateAsteriskList(3);
+            
+            Assert.AreEqual(result, pattern.CombineAsterisk(list));
         }
     }
 }
