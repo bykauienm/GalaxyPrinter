@@ -22,11 +22,14 @@ namespace PatternPrint.AsteriskPatterns
             else
                 return false;
         }
+        
+
         public virtual void RequestInputMessage()
         {
             Console.Clear();
             Console.WriteLine($"How many lines? ({(int)Range.Min}..{(int)Range.Max})  ");
         }
+
         public virtual void InvalidInputRangeMessage()
         {
             Console.Clear();
