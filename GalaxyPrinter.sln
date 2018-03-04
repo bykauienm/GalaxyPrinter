@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{16597463-D457-4466-A465-81FF47A10D4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyPrinter", "GalaxyPrinter\GalaxyPrinter.csproj", "{16597463-D457-4466-A465-81FF47A10D4D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternPrint", "PatternPrint\PatternPrint.csproj", "{1A67F925-192A-4147-BEDC-D6CB7E675E22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{0EBBAC16-48DB-4EBD-9533-DDFA829535AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyPrinter.Test", "GalaxyPrinter.Test\GalaxyPrinter.Test.csproj", "{0EBBAC16-48DB-4EBD-9533-DDFA829535AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,8 +7,8 @@
     <ProjectGuid>{0EBBAC16-48DB-4EBD-9533-DDFA829535AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestProject</RootNamespace>
-    <AssemblyName>UnitTestProject</AssemblyName>
+    <RootNamespace>GalaxyPrinter.Test</RootNamespace>
+    <AssemblyName>GalaxyPrinter.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,7 +57,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj">
+    <ProjectReference Include="..\GalaxyPrinter\GalaxyPrinter.csproj">
       <Project>{16597463-d457-4466-a465-81ff47a10d4d}</Project>
       <Name>ConsoleApp1</Name>
     </ProjectReference>
