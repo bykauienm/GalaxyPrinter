@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PatternPrint;
 
-namespace ConsoleApp1
+namespace GalaxyPrinter
 {
     public class Program
     {

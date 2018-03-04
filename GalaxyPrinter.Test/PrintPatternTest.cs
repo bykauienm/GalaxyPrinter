@@ -4,7 +4,7 @@ using PatternPrint;
 using PatternPrint.AsteriskPatterns;
 using System.Collections.Generic;
 
-namespace UnitTestProject
+namespace GalaxyPrinter.Test
 {
     [TestClass]
     public class PrintPatternTest
