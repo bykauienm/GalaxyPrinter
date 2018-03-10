@@ -9,7 +9,7 @@ namespace PatternPrint.AsteriskPatterns
     public enum Range
     {
         Min = 1,
-        Max = 100
+        Max = 50
     }
 
     public abstract class PatternBase
