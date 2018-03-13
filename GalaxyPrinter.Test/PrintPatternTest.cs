@@ -12,7 +12,7 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternPyramid(int number, bool isValid)
         {
             var pattern = new PatternPyramid();
@@ -23,7 +23,7 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternReverse(int number, bool isValid)
         {
             var pattern = new PatternReverse();
@@ -35,7 +35,7 @@ namespace GalaxyPrinter.Test
         [DataRow(0, true)]
         [DataRow(4, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternDiamond(int number, bool isValid)
         {
             var pattern = new PatternDiamond();
@@ -46,7 +46,7 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternDiagnal(int number, bool isValid)
         {
             var pattern = new PatternDiagnal();
@@ -57,7 +57,7 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternHorn(int number, bool isValid)
         {
             var pattern = new PatternHorn();
@@ -68,7 +68,7 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternIncreasePyramid(int number, bool isValid)
         {
             var pattern = new PatternIncreasePyramid();
@@ -79,7 +79,7 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternRightUpPyramid(int number, bool isValid)
         {
             var pattern = new PatternRightUpPyramid();
@@ -90,10 +90,22 @@ namespace GalaxyPrinter.Test
         [DataTestMethod]
         [DataRow(0, true)]
         [DataRow(5, false)]
-        [DataRow(101, true)]
+        [DataRow(51, true)]
         public void IsOutOfRangeTestPatternRandomPyramid(int number, bool isValid)
         {
             var pattern = new PatternRandomPyramid();
+
+            Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
+        }
+
+        [DataTestMethod]
+        [DataRow(0, true)]
+        [DataRow(4, true)]
+        [DataRow(5, false)]
+        [DataRow(51, true)]
+        public void IsOutOfRangeTestPatternRandomDiamond(int number, bool isValid)
+        {
+            var pattern = new PatternRandomDiamond();
 
             Assert.AreEqual(pattern.IsOutOfRange(number), isValid);
         }
@@ -172,5 +184,17 @@ namespace GalaxyPrinter.Test
             
             Assert.AreEqual(result, pattern.CombineAsterisk(list));
         }
+
+        [TestMethod]
+        public void PrintTestRandomDiamond()
+        {
+            var pattern = new PatternRandomDiamond();
+            string result = pattern.PrintDiamondGroup(1,5) + "\n" + pattern.PrintDiamondGroup(3,5) + "\n" + pattern.PrintDiamondGroup(5,5) + "\n";
+
+            var list = pattern.GenerateAsteriskList(5);
+
+            Assert.AreEqual(result, pattern.CombineAsterisk(list));
+        }
+
     }
 }

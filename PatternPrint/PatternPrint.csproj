@@ -46,6 +46,7 @@
     <Compile Include="AsteriskPatterns\PatternHorn.cs" />
     <Compile Include="AsteriskPatterns\PatternIncreasePyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternPyramid.cs" />
+    <Compile Include="AsteriskPatterns\PatternRandomDiamond .cs" />
     <Compile Include="AsteriskPatterns\PatternRandomPyramid.cs" />
     <Compile Include="AsteriskPatterns\PatternReverse.cs" />
     <Compile Include="AsteriskPatterns\PatternRightUpPyramid.cs" />

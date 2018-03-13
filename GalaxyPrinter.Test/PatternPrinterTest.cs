@@ -83,5 +83,14 @@ namespace GalaxyPrinter.Test
 
             Assert.AreEqual(new PatternRandomPyramid().GetType(), pattern.GetType());
         }
+
+        [TestMethod]
+        public void FindPatternTestRandomDiamond()
+        {
+            var printer = new PatternPrinter();
+            var pattern = printer.FindPattern("9");
+
+            Assert.AreEqual(new PatternRandomDiamond().GetType(), pattern.GetType());
+        }
     }
 }
