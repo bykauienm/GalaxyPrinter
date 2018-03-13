@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PatternPrint.AsteriskPatterns
 {
-    public class PatternRandomDiamond : PatternDiamond
+    public class PatternRandomDiamond : PatternBase
     {
         public override string Print(int height)
         {
@@ -89,6 +89,29 @@ namespace PatternPrint.AsteriskPatterns
             }
 
             return asterisk.ToString();
+        }
+
+        public override bool IsOutOfRange(int number)
+        {
+            if (base.IsOutOfRange(number))
+                return true;
+
+            if ((number % 2) == 0)
+                return true;
+            else
+                return false;
+        }
+
+        public override void RequestInputMessage()
+        {
+            base.RequestInputMessage();
+            Console.WriteLine("and Only Odd number");
+        }
+
+        public override void InvalidInputRangeMessage()
+        {
+            base.InvalidInputRangeMessage();
+            Console.WriteLine("and Only Odd number");
         }
 
     }
