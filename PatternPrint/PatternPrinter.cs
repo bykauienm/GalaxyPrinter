@@ -23,6 +23,7 @@ namespace PatternPrint
             PatternDictionary.Add("6", new PatternIncreasePyramid());
             PatternDictionary.Add("7", new PatternRightUpPyramid());
             PatternDictionary.Add("8", new PatternRandomPyramid());
+            PatternDictionary.Add("9", new PatternRandomDiamond());
         }
 
         public PatternBase FindPattern(string select)
@@ -50,15 +51,19 @@ namespace PatternPrint
                     $"   *****        *        *       *****        *                \n" +
                     $"                                                            *  \n" +
                     $"                                                            ** \n" +
-                    $"7. *     *      *      8.(6-Random)                         ***\n" +
-                    $"         **     **     *                                       \n" +
-                    $"                ***                                            \n" +
-                    $"                       *                                       \n" +
+                    $"7. *     *      *      8.(6-Random) 9.(3-Random)           ***\n" +
+                    $"         **     **     *                   *                   \n" +
+                    $"                ***                       ***                  \n" +
+                    $"                       *                   *                   \n" +
                     $"                       **                                      \n" +   
-                    $"                       ***                                     \n" +   
+                    $"                       ***                 *                   \n" +   
                     $"                                                               \n" +   
-                    $"                       *                                       \n" +
-                    $"                       **                                      \n" +   
+                    $"                       *                   *                   \n" +
+                    $"                       **                 ***                  \n" +
+                    $"                                         *****                 \n" +
+                    $"                                          ***                  \n" +
+                    $"                                           *                   \n" +
+
                     $"Select type number (1 ~ {PatternDictionary.Count}) ";
             Console.WriteLine(question);
         }
